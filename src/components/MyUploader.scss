@@ -1,0 +1,70 @@
+@import "src/clients/public/theme/scss/bootstrap/variables";
+
+.dropzone {
+  border: 3px dashed $gray;
+  padding: 3rem 1rem;
+  position: relative;
+  transition: padding 0.2s ease-in;
+
+  .hasObjects & {
+    padding: 1rem;
+  }
+}
+
+.activeDropzone {
+  border-style: solid;
+  border-color: $green;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.rejectDropzone {
+  border-color: $brand-danger;
+}
+
+.dropzoneLabel {
+  font-size: $font-size-lg;
+  text-align: center;
+}
+
+.thumbnail {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.thumbnailImg {
+  border-radius: 4px;
+  height: 64px;
+  margin-bottom: 0.5rem;
+
+  .isUploaded & {
+    border: 4px solid $green;
+  }
+}
+
+.imageName {
+  margin-bottom: 0.5rem;
+  height: 24px;
+}
+
+.progressWrapper {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: $gray-light;
+}
+
+.progress {
+  position: absolute;
+  top: -4px;
+  height: 10px;
+  background: $brand-warning;
+}
