@@ -90,6 +90,15 @@ These are the properties you can pass to the `reduxSagaUploader(...)`:
 | validation.acceptsDuplicates | Boolean           | `false`       | If set, the uploader will invalidate duplicated files (`name` and `size` are used in the comparison)                                      |   |
 | handlerConfig                | Object            |               | The configuration passed to the handler you chose ([full list of handlers](somelink.com))                                                 |   |
 
+When rendering your uploader, every prop you pass to it will override your decorator configuration. There's also an additional prop `onUpload` so that you can use your uploader inside a form or send the IDs to your server, for example:
+
+```js
+<MySingleFileUploader onUpload={object => myFileInput.change(object.id)} />
+
+// `onUpload` is called for each file in a multi uploader
+<MyMultiFileUploader onUpload={object => myFiles.push(object.id)} />
+```
+
 # Step 5: build the UI
 
 The final and most exciting step!
